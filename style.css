@@ -1,0 +1,204 @@
+:root{
+    --overall-color:rgb(218, 35, 35);
+}
+@font-face {
+    font-family: DMSans;
+    src: url("DMSans.woff2");
+}
+body{
+    display: grid; font-family: sans-serif;
+    grid-template-columns: 20vw 80vw;
+    grid-template-rows: 20vh 80vh;
+    height: 100vh;
+    margin-left: 0px; margin-bottom:-10px; 
+    overflow:hidden; position: fixed;
+
+}
+.sidebar{
+    /* background-color: var(--overall-color); */
+    background-image: linear-gradient(90deg, red, orange);
+    display: grid;
+    grid-row: 1/-1;
+    grid-template-rows: 15vh repeat(5, 6vh) 15vh repeat(3, 6vh);
+    grid-template-columns: 15vw;
+    padding-left: 20px;
+    column-gap: 3vh;
+    justify-content: center; box-shadow: 2px 2px 3px gray;
+    z-index:1;
+    font-weight: 800;
+}
+.sidebarTab{
+    display: grid;
+    grid-template-columns: 1fr 5fr; gap: 1vw; font-size: 1.5rem;
+}
+.sidebarTab>div{
+    grid-column: 2/-1;
+    color: maroon;
+    position: relative; top: .5vh;
+}
+img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}   
+.sidebarHeader{
+    display: grid; grid-template-columns: 5vw 7vw;
+    margin-left: -2vw; font-family: DMSans;
+}
+.sidebarHeader> img{
+    width: 5vw;
+}
+.sidebarHeader>h1:nth-child(2){
+    grid-column: 2/-1; color: gold;
+}
+.header{
+    background-image: linear-gradient(90deg, orange, yellow);
+    grid-column: 2/-1;
+    box-shadow: 0px 3px 5px gray;
+    z-index: 0;
+}
+.headerTopSec{
+    display: grid;
+    height: 4vh; padding-top: 4vh;
+    grid-template-columns: 2vw 50vw 2vw 3vw 15vw;
+    grid-template-rows: 4vh;
+    justify-content: center;
+    column-gap: 1vw;
+}
+.searchIcon, .notif{
+    position: relative; bottom: 1vh; right: .5vw;
+}
+.searchBar{
+    background-image: linear-gradient(90deg, gray, white); font-family: DMSans, sans-serif; font-weight: 500;
+    border-radius: 15px; width: 40vw;
+    position: relative; bottom: 1vh; box-sizing: border-box; padding: 1vh 1vw 1vh 1vw;
+    border: none;
+}
+.searchBar:focus{
+    outline:none; 
+    border: red 3px solid; transition: all .5s ease-out;
+}
+.headerBottomSec{
+    height: 8vh; display: grid; padding-top: 4vh;
+    grid-template-columns: 5vw 33vw repeat(3, 10vw);
+    gap: 1vw; justify-content: center;
+}
+.welcomeMsg{
+    position: relative; bottom: 2vh;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+.welcomeMsg > div:first-child{
+    font-weight: 800;
+}
+.welcomeMsg > div:nth-child(2){
+    font-weight:800; font-size: 1.5em; margin-top: .5vh;
+}
+.largeProfIcon{
+    clip-path: circle(50%); width: 5vw; height: auto;
+    position: relative; bottom: 3vh;
+}
+.miniProfIcon{
+    clip-path: circle(50%); width: 3vw;
+    position: relative; bottom: 1.5vh;
+}
+.headerTopSec>.username{
+    font-weight: 800; font-family: sans-serif;
+}
+.headerBottomSec > button{
+    font-family: Arial, Helvetica, sans-serif; font-weight: 1000;
+    background-image: linear-gradient(90deg, orange, yellow);
+    color: black; height: 5vh; width: 7vw; 
+    border-radius: 20px; justify-self: end;
+    /* border: none; box-shadow: 1px 1px 2px gray; */
+}
+.main{
+    background-image: linear-gradient(45deg, black, gray); overflow: auto;
+    grid-row: 2/-1; font-family: Geneva, Tahoma, sans-serif;
+    display: grid; 
+    grid-template-columns: 50vw 1fr;
+    padding-bottom: 10vh;
+}
+.leftMain{
+    padding-left: 2vw; padding-top: 4vh;
+    width: 50vw; display: grid;
+    grid-template-rows: 2vh repeat(3, 10 vh);
+    grid-template-columns: repeat(2, 25vw);
+    gap: 2vw;
+}
+.leftMainHeader{
+    font-size: 1.3rem; color: silver;
+    grid-column: 1/-1; font-weight: 800; margin-bottom:-2vw;
+}
+.project{
+    display: grid; background-color: lightyellow;
+    box-shadow: 2px 2px 3px gray;
+    border-radius: 15px; padding: 3vh 2vw 3vh 2vw;
+    border-inline-start: 8px solid orange;
+    grid-template-rows: 1fr 6fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    
+}
+.project > div:first-child{
+    font-family: sans-serif; 
+    font-weight: 800; font-size: 1.2rem; grid-column: 1/-1;
+}
+.project>div:nth-child(2){
+    grid-column: 1/-1; color: gray;
+}
+.project>img{
+    justify-self: end; 
+    width: 2vw; height: auto;
+}
+
+.rightMain{
+    z-index: 2; padding-left: 5vw; padding-top: 4vh;
+}
+.rightMainTopHeader,.rightMainBottomHeader{
+    font-weight: 800; font-size: 1.3rem;
+    margin-bottom: 1vh; color: silver;
+}
+.rightMainBottomHeader{
+    padding-top: 4vh;
+}
+.announcementContainer{
+    background-color: lightyellow; border-radius: 15px; box-shadow:2px 2px 3px gray;
+    padding: 5vh 2vw 2vh 2vw; display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    width: 65%; gap: 3vh;
+}
+.announcement{
+    display: grid; 
+    grid-template-rows: 1fr 4fr; font-family: sans-serif;
+    padding-bottom: 3vh;
+}
+.announcement > div:first-child{
+    font-weight: 1000;
+    font-size: 1.1em;
+}
+.announcement > div:nth-child(2){
+    color: gray;
+}
+.announcement:first-child, .announcement:nth-child(2){
+    border-bottom: gray solid 1px;
+}
+.trendingContainer{
+    font-family: sans-serif;
+    background-color: lightyellow; border-radius: 15px; box-shadow:2px 2px 3px gray;
+    padding: 5vh 2vw 5vh 2vw;
+    display: grid; grid-template-rows: repeat(4, 1fr);
+    width: 65%;
+    gap: 4vh;
+}
+.trendingUsers{
+    display: grid; grid-template-rows: repeat(2, 1fr); grid-template-columns: 3fr 7fr;
+    column-gap: .5vw;
+}
+.trendingUsers> .pfp{
+    grid-row: 1/-1; width: 4vw; height: auto;
+    position: relative; bottom: 1vh; 
+}
+.trendingUsers> .nickname{
+    color: gray; font-size: .95em;
+}
